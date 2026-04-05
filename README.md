@@ -1,5 +1,11 @@
-
 # Heimdall Desktop by Naidel
+
+![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![PySide6](https://img.shields.io/badge/GUI-PySide6-41CD52?logo=qt)
+![Release](https://img.shields.io/github/v/release/atmarquez/heimdall-desktop)
+![Status](https://img.shields.io/badge/Status-Stable-green)
 
 **Heimdall Desktop** is an advanced application launcher for Windows,
 developed in **Python** using **PySide6**.
