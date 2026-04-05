@@ -1,0 +1,19 @@
+QWidget { font-family: Segoe UI, Arial; font-size: 10.5pt; }
+QMainWindow { background: #efefef; }
+#leftPanel { background: #ffffff; border: 1px solid #c9c9c9; }
+QTreeWidget { border: none; }
+QTreeWidget::item { height: 28px; }
+QTreeWidget::item:selected { background: #d8ecff; color: #003e6b; }
+QLineEdit#searchEdit { border: 1px solid #bcbcbc; border-radius: 4px; padding: 6px 28px 6px 8px; }
+#rightPanel { background: #e6e6e6; border-left: 1px solid #c9c9c9; }
+QToolButton.sideBtn { text-align: left; padding: 6px 10px; border: none; background: transparent; }
+QToolButton.sideBtn:hover { background: #dcdcdc; }
+QToolButton#configBtn { font-weight: 600; }
+#bottomBar { background: #d7d7d7; border-top: 1px solid #b5b5b5; padding: 4px 8px; }
+
+/* Corregido: text-visible NO existe en Qt */
+QProgressBar#diskBar {
+    height: 12px;
+    color: transparent;   /* oculta el texto del porcentaje */
+    text-align: center;
+}
