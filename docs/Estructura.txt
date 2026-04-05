@@ -1,0 +1,67 @@
+
+app_meta.py					# Constantes generales para el "Acerca de"
+config.json					# Fichero de configuración
+main.py						# main.py (temporal)
+main_legacy.py					# Fichero gordo que quiero ir limpiando de código para pasarlo a otros ficheros
+shell_utils.py					# Utilidades shell
+styles.qss					# Fichero de estilos definidos por el usuario (no embebido en theme_manager.py)
+windows_special_commands.json
+
+config/
+├── __init__.py
+├── service.py    			# Servicio centralizado de configuración
+core/
+├── __init__.py
+├── autostart.py 	 		# Gestión del auto-inicio del programa en Windows.
+├── scheduler.py    	    # Programador de tarea
+├── scripts.py          	# Ejecución de scripts
+├── shortcuts.py	        # Manejo de accesos directos
+├── app_controller.py		# Controlador principal de la aplicación.
+logutils/
+├── __init__.py
+├── setup.py     			# Configuración centralizada de logging y auditoría básica
+├── memory.py           	# Observabilidad en memoria
+themes/
+├── __init__.py
+├── theme_manager.py		# Gestión centralizada de temas y apariencia
+server/
+├── __init__.py
+├── security.py		        # token + dpapi
+├── audit.py        	    # auditoria
+├── throttle.py         	# throttle
+├── http.py             	# RequestHandler
+ui/
+├── __init__.py
+├── main_window.py			# Ventana principal del lanzador: lista accesos, panel lateral, bandeja del sistema y utilidades.
+├── tree.py             	# Clase de la AppTree
+├── helpers.py				# Clase HelpableDialogMixin
+├── help.py					# Aquí vive open_help_page
+├── roles.py				# Contratos de datos compartido entre UI widgets ROLE_PATH y ROLE_IS_DIR
+├── dialogs/
+│   ├── __init__.py
+│   ├── drop_import.py.py 					# Clase DropImportDialog
+│   ├── script_config.py					# Clase ScriptConfigDialog
+│   ├── task_scheduler.py					# Clase TaskSchedulerDialog
+│   ├── task_editor.py						# Clase TaskEditorDialog
+│   ├── quick_buttons.py					# Clase QuickButtonsDialog
+│   ├-─ create_url_dialog.py				# Clase CreateUrlDialog 
+│   ├-─ create_shortcut_dialog.py			# Clase CreateShortcutDialog 
+│   ├-─ special_commands_dialog.py			# Clase SpecialCommandsDialog 
+│   └-─ create_network_location_dialog.py   # Clase CreateNetworkLocationDialog: Dialogo para crear ubicaciones de red (UNC, URL, FTP, WebDAV, etc.)
+├── server/					# → servidor
+│   ├── __init__.py
+│   ├── dialogs.py 			# Dialogos del servidor: Clases ThrottleConfigDialog, ServerOptionsDialog, TlsOptionsDialog, AuditViewerDialog, TokenDialog
+│   ├── summaries.py		# Lógica de resúmenes (texto) del servidor fuera de ExtendedConfigDialog y dejarla como funciones puras, reutilizables y sin UI.
+│   └── patches.py			# Código de parches HTTP / auditoría (apply_mainwindow_http_patches y _patched__audit)
+├── config/					# Dialogos asociados a Configuración → configuración
+│   ├── __init__.py
+│   ├── dialog.py			# Dialogo de "Configuración": Clase ConfigDialog -> De aquí cuelgan las "pestañas":
+│   ├── about.py			# - Pestaña “Acerca de...” dentro de "Configuración" -> class AboutTab
+│   ├── server.py			# - Pestaña “Servidor” dentro de "Configuración" -> class ServerConfigTab
+│   ├── log.py				# - Pestaña “Log” dentro de "Configuración" -> class LogConfigTab
+│   ├── import_export.py	# - Pestaña “Avanzado” dentro de "Configuración" -> class ImportExportConfigTab
+│   ├── scripts.py			# - Pestaña “Scripts” dentro de "Configuración" -> class ScriptConfigTab
+│   ├── quick_buttons.py	# - Pestaña “Botones rápidos” dentro de "Configuración" -> class QuickButtonsConfigTab
+│   ├── appearance.py		# - Pestaña “Apariencia” dentro de "Configuración" -> class AppearanceConfigTab
+│   └── general.py			# - Pestaña “General” dentro de "Configuración" -> class GeneralConfigTab
+
