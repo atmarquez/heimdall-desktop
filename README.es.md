@@ -21,6 +21,11 @@ que buscan un punto centralizado de control sin perder flexibilidad ni seguridad
 
 ---
 
+## 🌐 Documentación web:
+https://atmarquez.github.io/heimdall-desktop/
+
+---
+
 ## ✨ Características principales
 
 - Interfaz gráfica moderna basada en **PySide6** (Qt).
