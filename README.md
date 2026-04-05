@@ -21,6 +21,11 @@ who need a centralized control point without sacrificing flexibility or security
 
 ---
 
+## 🌐 Web:
+https://atmarquez.github.io/heimdall-desktop/
+
+---
+
 ## ✨ Key Features
 
 - Modern graphical user interface based on **PySide6** (Qt).
