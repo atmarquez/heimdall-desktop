@@ -1,6 +1,10 @@
-2026-04-05 21:20:56,295 [INFO] Heimdall Desktop by Naidel: Aplicación iniciada.
-2026-04-05 21:20:56,585 [INFO] Heimdall Desktop by Naidel: Auto-inicio con Windows: desactivado - metodo=registry - minimized=True
-2026-04-05 21:21:24,152 [INFO] Heimdall Desktop by Naidel: Salir: ¿Seguro que deseas salir de la aplicación?
-2026-04-05 21:21:25,258 [INFO] Heimdall Desktop by Naidel: Aplicación saliendo…
-2026-04-05 21:21:25,258 [INFO] server.throttle: Estado de throttle reiniciado
-2026-04-05 21:21:25,258 [INFO] server.http: [server] throttle/backoff state cleared on stop
+2026-04-10 23:32:22,144 [INFO] Heimdall Desktop by Naidel: Tema SYSTEM activo pero sin QSS válido
+2026-04-10 23:32:22,192 [INFO] Heimdall Desktop by Naidel: Aplicación iniciada.
+2026-04-10 23:32:22,497 [INFO] Heimdall Desktop by Naidel: Auto-inicio con Windows: desactivado - metodo=registry - minimized=True
+2026-04-10 23:32:22,622 [INFO] Heimdall Desktop by Naidel: Tema SYSTEM activo pero sin QSS válido
+2026-04-10 23:32:26,229 [INFO] Heimdall Desktop by Naidel: [server] Lista SERVER_ALLOWED_EXTS vacía.
+2026-04-10 23:32:44,172 [INFO] Heimdall Desktop by Naidel: Bandeja del sistema: La aplicación seguirá ejecutándose en la bandeja del sistema.
+Puedes cerrarla desde el icono de la bandeja.
+2026-04-10 23:32:45,644 [INFO] Heimdall Desktop by Naidel: Aplicación saliendo…
+2026-04-10 23:32:45,645 [INFO] server.throttle: Estado de throttle reiniciado
+2026-04-10 23:32:45,646 [INFO] server.http: [server] throttle/backoff state cleared on stop

@@ -52,7 +52,7 @@ APP_NAME = "Heimdall Desktop by Naidel"
 # RECOMENDACIÓN:
 # - Mantener este valor sincronizado con releases y CHANGELOG.
 # - Usar un esquema consistente (semver o similar).
-APP_VERSION = "0.16.3b"
+APP_VERSION = "0.20.1"
 
 # Identificador de build.
 # Suele representar la fecha de compilación o liberación.
