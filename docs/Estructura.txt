@@ -6,7 +6,6 @@ main_legacy.py					# Fichero gordo que quiero ir limpiando de código para pasar
 shell_utils.py					# Utilidades shell
 styles.qss					# Fichero de estilos definidos por el usuario (no embebido en theme_manager.py)
 windows_special_commands.json
-
 config/
 ├── __init__.py
 ├── service.py    			# Servicio centralizado de configuración
