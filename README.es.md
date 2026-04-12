@@ -10,6 +10,11 @@
 **Heimdall Desktop** es un lanzador avanzado de aplicaciones para Windows,
 desarrollado en **Python** con **PySide6**.
 
+**Versión:** 0.20.1  
+**Plataforma:** Windows 10 / 11  
+**Lenguaje:** Python 3.10+  
+**Interfaz:** PySide6 (Qt)
+
 Proporciona una interfaz gráfica potente y organizada para:
 
 - Gestionar accesos a aplicaciones, scripts y ubicaciones especiales.
@@ -134,6 +139,9 @@ Pestaña de Configuración → Generales, donde se definen los parámetros bási
 
 Pestaña de Configuración → Apariencia, dedicada a la personalización visual:
 - Tema claro, oscuro o del sistema.
+- Modo de tema del sistema con soporte para **ficheros QSS externos**.
+- Interfaz totalmente personalizable mediante estilos QSS definidos por el usuario.
+- Aplicación dinámica de cambios visuales sin reiniciar la aplicación.
 - Icono de la aplicación.
 - Tamaño y posición inicial de la ventana.
 - Integración visual con Windows 10 / 11.
@@ -243,3 +251,4 @@ Consulta el archivo LICENSE para más información.
 ## 👤 Autor
 
 Antonio Teodomiro Márquez Muñoz (Naidel)
+

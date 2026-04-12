@@ -1,3 +1,4 @@
+
 # Heimdall Desktop by Naidel
 
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
@@ -142,12 +143,15 @@ Configuration → General tab, where the core application settings are defined:
 
 ### 🎨 Options · Appearance
 
-Configuration → Appearance tab, focused on visual customization:
+Settings tab → Appearance, dedicated to visual customization:
 
 - Light, dark, or system theme.
+- System theme mode with support for external QSS files.
+- Fully customizable interface using user-defined QSS styles.
+- Dynamic application of visual changes without restarting the application.
 - Application icon.
 - Initial window size and position.
-- Visual integration with Windows 10 / 11.
+- Visual integration with Windows 10/11.
 
 ![Configuración de apariencia](docs/images/configuración-apariencia.png)
 
