@@ -5,6 +5,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 \---
 
+## [0.21.0](https://github.com/naidel/heimdall-desktop/releases/tag/v0.21.0) - 2026-04-12
+
+* Corregido error al cargar los datos de la configuración.
+
+\---
+
 ## [0.20.1](https://github.com/naidel/heimdall-desktop/releases/tag/v0.20.1) - 2026-04-12
 
 ### Español 🇪🇸
