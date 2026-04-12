@@ -1,0 +1,4 @@
+QWidget { background: #2a200f; color: #f0e6cc; }
+QMainWindow, QDialog { background: #2a200f; }
+QLineEdit, QComboBox, QTextEdit, QPlainTextEdit { background: #3a2f16; color: #f0e6cc; border: 1px solid #a67c3a; }
+QTreeWidget::item:selected { background: #ffbf47; color: #2a200f; }

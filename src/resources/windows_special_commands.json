@@ -1,0 +1,1996 @@
+{
+  "metadata": {
+    "nombre": "Windows Special Commands Catalog",
+    "version": "1.0.0",
+    "generado_en": "2026-03-15T17:37:19Z",
+    "comentario": "Catálogo consolidado automáticamente desde fuentes públicas.",
+    "fuentes_generales": [
+      {
+        "titulo": "Windows Shell Commands (shell:)",
+        "url": "https://windowsloop.com/windows-shell-commands/"
+      },
+      {
+        "titulo": "MS-Settings URI list (CSV)",
+        "url": "https://gist.github.com/apersonintech/8d255c61adc292d90373ee0dc017f3f3"
+      },
+      {
+        "titulo": "List Of .MSC Consoles",
+        "url": "https://www.itechtics.com/msc-files/"
+      },
+      {
+        "titulo": "Windows 11 CLSID list",
+        "url": "https://www.elevenforum.com/t/list-of-windows-11-clsid-key-guid-shortcuts.1075/"
+      }
+    ],
+    "_ultima_descarga": {
+      "fuentes_usadas": [
+        "https://gist.github.com/apersonintech/8d255c61adc292d90373ee0dc017f3f3/raw",
+        "https://windowsloop.com/windows-shell-commands/",
+        "https://www.itechtics.com/msc-files/"
+      ],
+      "total_fusionado": 392
+    }
+  },
+  "items": [
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:workplace",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:emailandaccounts",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:otherusers",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:assignedaccess",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:signinoptions",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:sync",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:signinoptions-launchfaceenrollment",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:yourinfo",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:appsfeatures",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:appsforwebsites",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:defaultapps",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:optionalfeatures",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:maps",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:startupapps",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:videoplayback",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:controlcenter",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:cortana-notifications",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:cortana-moredetails",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:cortana-permissions",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:cortana-windowssearch",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:cortana",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:autoplay",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:bluetooth",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:camera",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:mousetouchpad",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:pen",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:printers",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:devices-touch",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:devices-touchpad",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:devicestyping-hwkbtextsuggestions",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:typing",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:usb",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:wheel",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:mobile-devices",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-display",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-eyecontrol",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:fonts",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-highcontrast",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-keyboard",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-magnifier",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-mouse",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-mousepointer",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-narrator",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-colorfilte",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-speechrecognition",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-cursor",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-visualeffects",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-audio",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:easeofaccess-closedcaptioning",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:extras",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:family-group",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:gaming-gamebar",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:gaming-gamedvr",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:gaming-gamemode",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:quietmomentsgame",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:holographic-audio",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-holographic-environment",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:holographic-headset",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:holographic-management",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:holographic-startupandesktop",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-status",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-advancedsettings",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-airplanemode",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-cellular",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-dialup",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-directaccess",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-ethernet",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-wifisettings",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-mobilehotspot",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-proxy",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-vpn",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:network-wifi",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:wifi-provisioning",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:personalization-background",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:personalization-start-places",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:colors",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:lockscreen",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:personalization",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:personalization-start",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:taskbar",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:personalization-touchkeyboard",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:themes",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:deviceusage",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-accountinfo",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-activityhistory",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-appdiagnostics",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-automaticfiledownloads",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-backgroundapps",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-backgroundspatialperception",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-calendar",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-callhistory",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-webcam",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-contacts",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-documents",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-downloadsfolder",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-email",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-eyetracker (requires eyetracker hardware)",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-feedback",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-broadfilesystemaccess",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy or ms-settings:privacy-general",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-graphicscaptureprogrammatic",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-speechtyping",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-location",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-messaging",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-microphone",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-motion",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-musiclibrary",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-notifications",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-customdevices",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-phonecalls",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-pictures",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-radios",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-speech",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-tasks",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-videos",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:privacy-voice",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:search",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:search-moredetails",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:search-permissions",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:surfacehub-accounts",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:surfacehub-sessioncleanup",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:surfacehub-calling",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:surfacehub-devicemanagenent",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:surfacehub-welcome",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:about",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:display-advanced",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:apps-volume",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:batterysaver",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:batterysaver-settings",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:batterysaver-usagedetails",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:clipboard",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:display",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:savelocations",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:screenrotation",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:quietmomentspresentation",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:quietmomentsscheduled",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:deviceencryption",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:energyrecommendations",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:quiethours",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:display-advancedgraphic",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:display-advancedgraphics-default",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:multitasking",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:nightlight",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:project",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:crossdevice",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:notifications",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:remotedesktop",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:powersleep",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:presence",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:sound",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:sound-devices",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:storagesense",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:storagepolicies",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:storagerecommendations",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:disksandvolumes",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:dateandtime",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:regionformatting",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:keyboard",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:speech",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:regionlanguage-adddisplaylanguage",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:regionlanguage-languageoptions",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:regionlanguage-setdisplaylanguage",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:activation",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:backup",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:delivery-optimization",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:findmydevice",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:developers",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:recovery",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:signinoptions-launchsecuritykeyenrollment",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:troubleshoot",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsdefender",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsinsider",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsupdate",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsupdate-activehours",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsupdate-options",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsupdate-optionalupdates",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsupdate-restartoptions",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsupdate-seekerondemand",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsupdate-history",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:workplace-provisioning",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:workplace-repairtoken",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:provisioning",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "ms-settings:",
+      "Comando": "ms-settings:windowsanywhere",
+      "Descripción": "URI de Configuración (Windows). Fuente: Gist CSV."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Start Menu",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Downloads",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SendTo",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Startup",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Startup",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Recent",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Roaming Tiles",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CommonVideo",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:OneDrivePictures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:PrintersFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Programs",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Camera Roll",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Templates",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:InternetFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppDataDocuments",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:My Pictures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:UserProgramFiles",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:PrintHood",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:MyComputerFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ProgramFilesX86",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:My Video",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Templates",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:NetworkPlacesFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Public",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:NetHood",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AccountPictures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ProgramFilesCommon",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SearchHistoryFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CSCFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Recorded Calls",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Local Downloads",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppDataProgramData",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:PublicLibraries",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ProgramFilesX64",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ProgramFilesCommonX86",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Administrative Tools",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:UserProfiles",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:PublicAccountPictures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SearchTemplatesFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ThisDeviceFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Cookies",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Local Pictures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ImplicitAppShortcuts",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:VideosLibrary",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ResourceDir",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Windows",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Device Metadata Store",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ThisPCDesktopFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Administrative Tools",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:System",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:History",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Personal",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Quick Launch",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Links",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:User Pinned",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:MusicLibrary",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Start Menu",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Ringtones",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Original Images",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppDataFavorites",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ProgramFilesCommonX64",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:LocalizedResourcesDir",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:My Music",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Desktop",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AddNewProgramsFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CommonPictures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ControlPanelFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SavedGames",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common AppData",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:DpapiKeys",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SavedPictures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:OneDriveMusic",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CommonDownloads",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:GameTasks",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Cache",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:PublicGameTasks",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Retail Demo",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:PhotoAlbums",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Documents",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ChangeRemoveProgramsFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:MAPIFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CommonRingtones",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Searches",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Programs",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SystemCertificates",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Local Documents",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:PicturesLibrary",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CryptoKeys",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:RecordedTVLibrary",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Contacts",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Local Videos",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppDataDesktop",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:OneDrive",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:OEM Links",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:OneDriveDocuments",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:HomeGroupFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Start Menu Places",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppMods",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ConflictFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CD Burning",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Fonts",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CommonMusic",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Captures",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Development Files",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:HomeGroupCurrentUserFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SyncCenterFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:RecycleBinFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:3D Objects",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:LocalAppDataLow",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SearchHomeFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Application Shortcuts",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Favorites",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CameraRollLibrary",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Screenshots",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SavedPicturesLibrary",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Profile",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ConnectionsFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Local AppData",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:OneDriveCameraRoll",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:ProgramFiles",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Common Desktop",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:CredentialManager",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SyncResultsFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppData",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Libraries",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:DocumentsLibrary",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SyncSetupFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppsFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Roamed Tile Images",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:UserProgramFilesCommon",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:SystemX86",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Local Music",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:UsersFilesFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:Playlists",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:UsersLibrariesFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": "shell:",
+      "Comando": "shell:AppUpdatesFolder",
+      "Descripción": "Carpeta especial del Explorador. Fuente: WindowsLoop."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "services.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "azman.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "certlm.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "certmgr.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "comexp.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "compmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "devmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "devmoderunasuserconfig.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "diskmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "eventvwr.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "fsmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "gpedit.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "lusrmgr.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "perfmon.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "printmanagement.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "rsop.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "secpol.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "taskschd.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "tpm.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "wf.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "wmimgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "adfs.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "AdRmsAdmin.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "adsiedit.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "certim.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "certsrv.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "certtmpl.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "ciadv.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "cluadmin.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "da6to4.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "daihttps.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "daipsecdos.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "dfsmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "dhcpmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "dnsmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "domain.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "dsa.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "dssite.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "fsrm.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "fxsadmin.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "gpmc.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "gpme.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "gptedit.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "hcscfg.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "idmumgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "iis.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "iis6.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "lsdiag.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "napclcfg.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "mfsmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "nps.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "ocsp.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "pkiview.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "remoteprograms.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "rrasmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "sanmmc.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "sbmgr.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "scanmanagement.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "servermanager.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "storagemgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "storexpl.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "tapimgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "tsadmin.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "tsconfig.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "tsgateway.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "tsmmc.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "virtmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "wbadmin.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "winsmgmt.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "wbiadmin.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "wsrm.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "wsus.msc",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    },
+    {
+      "Categoría": ".msc (MMC)",
+      "Comando": "20.MSC",
+      "Descripción": "Consola de administración MMC. Fuente: ITechtics."
+    }
+  ]
+}

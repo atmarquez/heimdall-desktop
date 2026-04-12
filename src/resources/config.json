@@ -1,0 +1,43 @@
+{
+  "base_dir": ".\\apps",
+  "window": {
+    "width": 520,
+    "height": 640,
+    "x": 640,
+    "y": 245
+  },
+  "start_minimized": true,
+  "minimize_to_tray": true,
+  "launch_and_minimize": true,
+  "view_mode": "grouped",
+  "startup_behavior": "grouped",
+  "root_category_name": "Sin categoría",
+  "app_title": "Heimdall Desktop by Naidel",
+  "app_icon_path": "",
+  "theme": "system",
+  "web_search_url": "https://www.bing.com",
+  "log_enabled": true,
+  "log_file_path": "launcher.log",
+  "autostart_enabled": false,
+  "autostart_method": "registry",
+  "autostart_minimized": true,
+  "quick_buttons": [],
+  "scheduled_tasks": [],
+  "server_enabled": false,
+  "server_port": 8080,
+  "server_local_only": true,
+  "server_throttle_window_sec": 30,
+  "server_throttle_base_ms": 100,
+  "server_throttle_max_ms": 1000,
+  "server_throttle_threshold": 3,
+  "server_allowed_exts": [
+    ".ps1",
+    ".com",
+    ".vbs",
+    ".py",
+    ".cmd",
+    ".bat",
+    ".exe"
+  ],
+  "tray_notice_shown": true
+}

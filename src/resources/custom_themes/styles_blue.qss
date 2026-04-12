@@ -1,0 +1,86 @@
+QWidget {
+    background: #1e2a38;
+    color: #e6edf3;
+}
+
+QMainWindow, QDialog {
+    background: #1e2a38;
+}
+
+QLineEdit, QComboBox, QTextEdit, QPlainTextEdit {
+    background: #243447;
+    color: #e6edf3;
+    border: 1px solid #3a5a80;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+QLineEdit:focus, QComboBox:focus {
+    border: 1px solid #6cb6ff;
+}
+
+QPushButton {
+    background: #2f4b6e;
+    border: 1px solid #3a5a80;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+QPushButton:hover {
+    background: #3a5f8f;
+}
+
+QPushButton:pressed {
+    background: #294561;
+}
+
+QTreeWidget {
+    background: #243447;
+    border: 1px solid #3a5a80;
+}
+
+QTreeWidget::item:selected {
+    background: #6cb6ff;
+    color: #0b1b2b;
+}
+
+QProgressBar {
+    border: 1px solid #3a5a80;
+    background: #243447;
+    height: 10px;
+}
+
+QProgressBar::chunk {
+    background-color: #6cb6ff;
+}
+
+QTabWidget::pane {
+    border: 1px solid #3a5a80;
+}
+
+QTabBar::tab {
+    background: #243447;
+    color: #e6edf3;
+    border: 1px solid #3a5a80;
+    padding: 6px 10px;
+}
+
+QTabBar::tab:selected {
+    background: #3a5f8f;
+}
+
+QTabBar::tab:hover {
+    background: #34597a;
+}
+
+QHeaderView::section {
+    background-color: #243447;
+    color: #e6edf3;
+    border-right: 1px solid #3a5a80;
+    border-bottom: 1px solid #3a5a80;
+    padding: 6px;
+}
+
+QHeaderView::section:hover {
+    background-color: #34597a;
+}
