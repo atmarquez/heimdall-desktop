@@ -362,3 +362,21 @@ class LogConfigTab(QtWidgets.QWidget):
             cfg: Diccionario de configuración global.
         """
         cfg.update(self.gather())
+        
+    def populate_from_cfg(self):
+        """
+        Carga los valores desde la configuración actual (`cfg`)
+        hacia el estado interno y la interfaz.
+        """    
+        self.log_enabled_cb.setChecked(
+            bool(self.cfg.get('log_enabled', True))
+        )
+        
+        self.log_path_edit.setText(
+            self.cfg.get('log_file_path', 'launcher.log')
+        )
+
+        self.log_sb_n.setValue(
+            int(self.cfg.get('log_latest_n', 200) or 200)
+        )
+        

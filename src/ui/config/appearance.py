@@ -47,7 +47,7 @@ Clase principal expuesta:
 
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtWidgets import (
-    QWidget, QFormLayout, QLineEdit, QPushButton,
+    QWidget, QFormLayout, QLineEdit, QPushButton, QFileDialog,
     QComboBox, QCheckBox, QSpinBox, QLabel, QHBoxLayout
 )
 
@@ -170,6 +170,7 @@ class AppearanceConfigTab(QWidget):
         """
         cfg['app_icon_path'] = (self._icon_path or '').strip()
         cfg['theme'] = self.theme_combo.currentData()
+        cfg["system_qss_path"] = self.qss_path_edit.text()
 
         cfg['titlebar_align_dark_mode'] = self.tb_align_dark_cb.isChecked()
         cfg['titlebar_color'] = self._tb_bg_btn.property('_hex') or ''
@@ -220,14 +221,13 @@ class AppearanceConfigTab(QWidget):
         # Selector de tema visual
         # --------------------------------------------------
         self.theme_combo = QtWidgets.QComboBox(appearance_tab)
-        theme_labels = {THEME_SYSTEM: 'Por defecto del sistema (QSS externo)', THEME_LIGHT: 'Claro', THEME_DARK: 'Oscuro', THEME_HIGH_CONTRAST: 'Alto contraste', THEME_HOST_SYSTEM: 'Sistema operativo invitado (Windows)'}
+        theme_labels = {THEME_SYSTEM: 'QSS externo (fichero ".qss")', THEME_LIGHT: 'Claro', THEME_DARK: 'Oscuro', THEME_HIGH_CONTRAST: 'Alto contraste', THEME_HOST_SYSTEM: 'Sistema operativo invitado (Windows)'}
         self._theme_keys = [THEME_HOST_SYSTEM, THEME_LIGHT, THEME_DARK, THEME_HIGH_CONTRAST, THEME_SYSTEM]
         for k in self._theme_keys:
             self.theme_combo.addItem(theme_labels[k], userData=k)
         current_theme = self.cfg.get('theme', THEME_SYSTEM)
         idx = self._theme_keys.index(current_theme) if current_theme in self._theme_keys else self._theme_keys.index(THEME_SYSTEM)
         self.theme_combo.setCurrentIndex(idx)
-        
         
         # --------------------------------------------------
         # Inicialización defensiva de barra de título (Windows)
@@ -242,8 +242,57 @@ class AppearanceConfigTab(QWidget):
         except Exception:
             pass
         app_form.addRow('Tema visual:', self.theme_combo)
+               
+        # --------------------------------------------------
+        # --- Selector de tema QSS externo (THEME_SYSTEM) ---
+        # --------------------------------------------------
+        self.qss_path_edit = QLineEdit()
+        qss_path = self.cfg.get("system_qss_path", "")
+        self.qss_path_edit.setText(qss_path)
+        self.qss_path_edit.setReadOnly(True)
+
+        self.qss_browse_btn = QPushButton("Seleccionar fichero de tema (.qss)")
         
+        app_form.addRow("Archivo de tema QSS:", self.qss_path_edit)
+        app_form.addRow("", self.qss_browse_btn)
+
+        def _on_theme_changed():
+            theme = self.theme_combo.currentData()
+
+            is_system = theme == THEME_SYSTEM
+            self.qss_path_edit.setVisible(is_system)
+            self.qss_browse_btn.setVisible(is_system)
+
+        def _update_qss_selector_visibility():
+            is_system = self.theme_combo.currentData() == THEME_SYSTEM
+            self.qss_path_edit.setVisible(is_system)
+            self.qss_browse_btn.setVisible(is_system)
         
+        def _select_qss_file():
+            path, _ = QFileDialog.getOpenFileName(
+                self,
+                "Seleccionar fichero de tema QSS",
+                "",
+                "Ficheros QSS (*.qss)"
+            )
+
+            if not path:
+                return
+
+            # Mostrar la ruta en la UI
+            self.qss_path_edit.setText(path)
+
+            # Guardar en la configuración en memoria
+            self.cfg["system_qss_path"] = path
+
+            # Aplicar el tema inmediatamente
+            from themes.theme_manager import ThemeManager
+            ThemeManager.apply_theme("system")
+
+        self.qss_browse_btn.clicked.connect(_select_qss_file)
+        self.theme_combo.currentIndexChanged.connect(_on_theme_changed)
+        _on_theme_changed()
+                
         # --------------------------------------------------
         # Colores de barra de título (Windows)
         # ------------------------------------------------

@@ -60,7 +60,7 @@ from ui.server.dialogs import (
 
 from pathlib import Path
 from PySide6 import QtCore, QtGui, QtWidgets
-from PySide6.QtWidgets import QFileDialog
+from PySide6.QtWidgets import QFileDialog, QWidget
 
 # ------------------------------------------------------------
 # Logging
@@ -70,7 +70,7 @@ from logutils.setup import get_logger
 LOGGER = get_logger()
 
 
-class ServerConfigTab:
+class ServerConfigTab(QWidget):
     """
     Controlador de la pestaña “Servidor” del diálogo de Configuración.
 
@@ -80,8 +80,6 @@ class ServerConfigTab:
     - Los diálogos secundarios de opciones avanzadas.
 
     Diseño:
-    - No hereda directamente de QWidget.
-    - Posee un widget raíz (`self.widget`) que se inserta en el tab.
     - Centraliza toda la lógica de UI relacionada con el servidor.
 
     NOTE:
@@ -103,6 +101,8 @@ class ServerConfigTab:
             tls_opts_summary_fn (callable):
                 Función que genera el resumen textual de opciones TLS.
         """
+        super().__init__(parent_dialog) 
+        
         self.parent = parent_dialog
         self.cfg = cfg
 
@@ -111,8 +111,7 @@ class ServerConfigTab:
         self.tls_opts_summary_fn = tls_opts_summary_fn
 
         # Widget raíz de la pestaña
-        self.widget = QtWidgets.QWidget(parent_dialog)
-        self.form = QtWidgets.QFormLayout(self.widget)
+        self.form = QtWidgets.QFormLayout(self)
 
         # Construcción de la interfaz
         self._build_ui()
@@ -134,7 +133,7 @@ class ServerConfigTab:
             - NO inicia ni detiene el servidor.
             - La aplicación de cambios se delega a otros métodos.
         """
-        self.server_enabled_cb = QtWidgets.QCheckBox('Habilitar servidor', self.widget)
+        self.server_enabled_cb = QtWidgets.QCheckBox('Habilitar servidor', self)
         self.server_enabled_cb.setObjectName('server_enabled_cb')
         self.server_enabled_cb.setChecked(bool(self.cfg.get('server_enabled', False)))
         self.form.addRow('', self.server_enabled_cb)
@@ -142,7 +141,7 @@ class ServerConfigTab:
         # --------------------------------------------------
         # Puerto del servidor
         # --------------------------------------------------
-        self.server_port_edit = QtWidgets.QLineEdit(self.widget)
+        self.server_port_edit = QtWidgets.QLineEdit(self)
         self.server_port_edit.setObjectName('server_port_edit')
         self.server_port_edit.setValidator(QtGui.QIntValidator(1, 65535, self.server_port_edit))
         try:
@@ -155,7 +154,7 @@ class ServerConfigTab:
         # --------------------------------------------------
         # Restricciones de acceso
         # --------------------------------------------------
-        self.server_local_cb = QtWidgets.QCheckBox('Atender solo peticiones locales', self.widget)
+        self.server_local_cb = QtWidgets.QCheckBox('Atender solo peticiones locales', self)
         self.server_local_cb.setObjectName('server_local_cb')
         self.server_local_cb.setChecked(bool(self.cfg.get('server_local_only', True)))
         if hasattr(self, 'server_whitelist_cb'):
@@ -214,7 +213,7 @@ class ServerConfigTab:
         # --------------------------------------------------
         # Whitelist de carpeta base
         # --------------------------------------------------
-        self.server_whitelist_cb = QtWidgets.QCheckBox('Whitelist carpeta base', self.widget)
+        self.server_whitelist_cb = QtWidgets.QCheckBox('Whitelist carpeta base', self)
         self.server_whitelist_cb.setObjectName('server_whitelist_cb')
         self.server_whitelist_cb.setChecked(bool(self.cfg.get('server_whitelist_base', False)))
         self.form.addRow('', self.server_whitelist_cb)
@@ -222,40 +221,40 @@ class ServerConfigTab:
         # --------------------------------------------------
         # TLS / HTTPS
         # --------------------------------------------------
-        self.server_tls_enabled_cb = QtWidgets.QCheckBox('Habilitar TLS (HTTPS)', self.widget)
+        self.server_tls_enabled_cb = QtWidgets.QCheckBox('Habilitar TLS (HTTPS)', self)
         self.server_tls_enabled_cb.setChecked(bool(self.cfg.get('server_tls_enabled', False)))
         self.form.addRow('', self.server_tls_enabled_cb)
-        self.server_tls_cert_edit = QtWidgets.QLineEdit(self.widget)
+        self.server_tls_cert_edit = QtWidgets.QLineEdit(self)
         self.server_tls_cert_edit.setText(self.cfg.get('server_tls_certfile', '') or '')
-        btn_tls_cert = QtWidgets.QPushButton('Examinar…', self.widget)
+        btn_tls_cert = QtWidgets.QPushButton('Examinar…', self)
 
         def _browse_cert():
             path, _ = QFileDialog.getOpenFileName(self, 'Seleccionar certificado (PEM/CRT)', str(Path.cwd()), 'Certificados (*.pem *.crt *.cer);;Todos (*.*)')
             if path:
                 self.server_tls_cert_edit.setText(path)
         btn_tls_cert.clicked.connect(_browse_cert)
-        row_cert = QtWidgets.QWidget(self.widget)
+        row_cert = QtWidgets.QWidget(self)
         _lc = QtWidgets.QHBoxLayout(row_cert)
         _lc.setContentsMargins(0, 0, 0, 0)
         _lc.addWidget(self.server_tls_cert_edit, 1)
         _lc.addWidget(btn_tls_cert)
         self.form.addRow('Certificado (PEM):', row_cert)
-        self.server_tls_key_edit = QtWidgets.QLineEdit(self.widget)
+        self.server_tls_key_edit = QtWidgets.QLineEdit(self)
         self.server_tls_key_edit.setText(self.cfg.get('server_tls_keyfile', '') or '')
-        btn_tls_key = QtWidgets.QPushButton('Examinar…', self.widget)
+        btn_tls_key = QtWidgets.QPushButton('Examinar…', self)
 
         def _browse_key():
             path, _ = QFileDialog.getOpenFileName(self, 'Seleccionar clave privada (KEY/PEM)', str(Path.cwd()), 'Claves privadas (*.key *.pem);;Todos (*.*)')
             if path:
                 self.server_tls_key_edit.setText(path)
         btn_tls_key.clicked.connect(_browse_key)
-        row_key = QtWidgets.QWidget(self.widget)
+        row_key = QtWidgets.QWidget(self)
         _lk = QtWidgets.QHBoxLayout(row_key)
         _lk.setContentsMargins(0, 0, 0, 0)
         _lk.addWidget(self.server_tls_key_edit, 1)
         _lk.addWidget(btn_tls_key)
         self.form.addRow('Clave privada:', row_key)
-        self.server_tls_minver_combo = QtWidgets.QComboBox(self.widget)
+        self.server_tls_minver_combo = QtWidgets.QComboBox(self)
         self._server_tls_minver_keys = ['TLS1.2', 'TLS1.3']
         self.server_tls_minver_combo.addItems(['TLS 1.2', 'TLS 1.3'])
         _curr_minv = str(self.cfg.get('server_tls_min_version', 'TLS1.2') or 'TLS1.2').upper()
@@ -265,7 +264,7 @@ class ServerConfigTab:
             _idx = 0
         self.server_tls_minver_combo.setCurrentIndex(_idx)
         self.form.addRow('Versión mínima TLS:', self.server_tls_minver_combo)
-        self.server_exts_edit = QtWidgets.QLineEdit(self.widget)
+        self.server_exts_edit = QtWidgets.QLineEdit(self)
         self.server_exts_edit.setObjectName('server_exts_edit')
         try:
             _exts = self.cfg.get('server_allowed_exts', None)
@@ -275,11 +274,16 @@ class ServerConfigTab:
                 _exts = [e.strip() for e in _exts.split(',') if e.strip()]
             _exts_norm = sorted({(e if e.startswith('.') else '.' + e).lower() for e in _exts})
         except Exception as e:
-            _exts_norm = sorted({e for e in SERVER_ALLOWED_EXTS})
+            try:
+                _exts_norm = sorted({e for e in SERVER_ALLOWED_EXTS})
+            except Exception as e:   
+                _exts_norm = ""
+                LOGGER.info('[server] Lista SERVER_ALLOWED_EXTS vacía.')
+                
         self.server_exts_edit.setText(','.join(_exts_norm))
         self.server_exts_edit.setPlaceholderText('.exe,.com,.bat,.cmd,.vbs,.ps1,.py')
         self.form.addRow('Extensiones permitidas:', self.server_exts_edit)
-        note = QtWidgets.QLabel('Servidor HTTP/HTTPS. Soporta parámetros close=1 y silent=1.', self.widget)
+        note = QtWidgets.QLabel('Servidor HTTP/HTTPS. Soporta parámetros close=1 y silent=1.', self)
         note.setWordWrap(True)
         self.form.addRow(note)
 
@@ -315,47 +319,47 @@ class ServerConfigTab:
                 _hide_row_widget(self.server_tls_minver_combo)
         except Exception as e:
             LOGGER.exception('[auto] Exception capturada en ConfigDialog::__init__')
-        self.server_opts_summary = QtWidgets.QLabel(self.server_opts_summary_fn(self.cfg), self.widget)
-        btn_srv_opts = QtWidgets.QPushButton('Opciones del servidor…', self.widget)
+        self.server_opts_summary = QtWidgets.QLabel(self.server_opts_summary_fn(self.cfg), self)
+        btn_srv_opts = QtWidgets.QPushButton('Opciones del servidor…', self)
         btn_srv_opts.clicked.connect(self._open_server_opts_dialog)
-        _row_srv = QtWidgets.QWidget(self.widget)
+        _row_srv = QtWidgets.QWidget(self)
         _ls = QtWidgets.QHBoxLayout(_row_srv)
         _ls.setContentsMargins(0, 0, 0, 0)
         _ls.addWidget(self.server_opts_summary, 1)
         _ls.addWidget(btn_srv_opts)
         self.form.addRow('Configuración de servidor:', _row_srv)
-        self.tls_opts_summary = QtWidgets.QLabel(self.tls_opts_summary_fn(self.cfg), self.widget)
-        btn_tls_opts = QtWidgets.QPushButton('Opciones TLS…', self.widget)
+        self.tls_opts_summary = QtWidgets.QLabel(self.tls_opts_summary_fn(self.cfg), self)
+        btn_tls_opts = QtWidgets.QPushButton('Opciones TLS…', self)
         btn_tls_opts.clicked.connect(self._open_tls_options_dialog)
-        _row_tls = QtWidgets.QWidget(self.widget)
+        _row_tls = QtWidgets.QWidget(self)
         _lt = QtWidgets.QHBoxLayout(_row_tls)
         _lt.setContentsMargins(0, 0, 0, 0)
         _lt.addWidget(self.tls_opts_summary, 1)
         _lt.addWidget(btn_tls_opts)
         self.form.addRow('TLS:', _row_tls)
-        self.btn_server_audit = QtWidgets.QPushButton('Auditoría…', self.widget)
+        self.btn_server_audit = QtWidgets.QPushButton('Auditoría…', self)
         self.btn_server_audit.clicked.connect(self._open_audit_viewer)
         self.form.addRow('Auditoría:', self.btn_server_audit)
-        btn_token = QtWidgets.QPushButton('Calcular Token', self.widget)
+        btn_token = QtWidgets.QPushButton('Calcular Token', self)
         btn_token.clicked.connect(self._open_token_dialog)
         self.form.addRow('Token HMAC:', btn_token)
         try:
             self._th_params = {'window_sec': int(self.cfg.get('server_throttle_window_sec', 30) or 30), 'base_ms': int(self.cfg.get('server_throttle_base_ms', 100) or 100), 'max_ms': int(self.cfg.get('server_throttle_max_ms', 1000) or 1000), 'threshold': int(self.cfg.get('server_throttle_threshold', 3) or 3)}
-            self.th_summary = QtWidgets.QLabel(throttle_summary(self._th_params), self.widget)
-            btn_throttle = QtWidgets.QPushButton('Configurar backoff…', self.widget)
+            self.th_summary = QtWidgets.QLabel(throttle_summary(self._th_params), self)
+            btn_throttle = QtWidgets.QPushButton('Configurar backoff…', self)
             btn_throttle.clicked.connect(self._open_throttle_dialog)
-            row = QtWidgets.QWidget(self.widget)
+            row = QtWidgets.QWidget(self)
             h = QtWidgets.QHBoxLayout(row)
             h.setContentsMargins(0, 0, 0, 0)
             h.addWidget(self.th_summary, 1)
             h.addWidget(btn_throttle)
             self.form.addRow('Backoff (errores):', row)
-            example = QtWidgets.QLabel(self.widget)
+            example = QtWidgets.QLabel(self)
             example.setTextFormat(QtCore.Qt.RichText)
             example.setWordWrap(True)
             example.setText('Ejemplo de llamada:<br><code>http(s)://127.0.0.1:8080/?path=C:\\Apps\\MiExe.exe&amp;close=1&amp;silent=0&amp;token=...</code><br><br><b>Parámetros:</b><br><code>close=1</code> → intenta cerrar la pestaña devolviendo una página con <code>window.close()</code> (el navegador puede bloquearlo).<br><code>silent=1</code> → devuelve <code>HTTP 204 No Content</code> y <code>Connection: close</code> (no muestra contenido).<br>Si ambos se especifican, <code>silent</code> tiene prioridad.')
             self.form.addRow(example)
-            note2 = QtWidgets.QLabel(self.widget)
+            note2 = QtWidgets.QLabel(self)
             note2.setText('Si activas "Whitelist carpeta base", la URL debe usar una ruta <b>relativa</b> respecto a la carpeta base configurada.')
             note2.setWordWrap(True)
             self.form.addRow(note2)
@@ -822,3 +826,81 @@ class ServerConfigTab:
               (por ejemplo, el diálogo principal de Configuración).
         """
         cfg.update(self.gather())
+
+    def populate_from_cfg(self):
+        """
+        Sincroniza la interfaz de la pestaña Servidor con la configuración actual.
+
+        NOTE:
+            - Este método NO aplica cambios.
+            - Este método NO guarda configuración.
+            - Solo refleja el estado actual de cfg en la UI.
+        """           
+        cfg = self.cfg   # ✅ usar la cfg almacenada en la instancia
+
+        if not isinstance(cfg, dict):
+            return
+        
+        # -------------------------------------------------
+        # Checkboxes principales
+        # -------------------------------------------------
+        # Bloqueamos señales para evitar side-effects
+
+        # ---------------------------------------------
+        # Checkbox: Servidor habilitado
+        # ---------------------------------------------
+        if hasattr(self, "server_enabled_cb"):
+            self.server_enabled_cb.blockSignals(True)
+            self.server_enabled_cb.setChecked(
+                bool(cfg.get("server_enabled", False))
+            )
+            self.server_enabled_cb.blockSignals(False)
+
+        # ---------------------------------------------
+        # Checkbox: TLS habilitado
+        # ---------------------------------------------
+        if hasattr(self, "server_tls_enabled_cb"):
+            self.server_tls_enabled_cb.blockSignals(True)
+            self.server_tls_enabled_cb.setChecked(
+                bool(cfg.get("server_tls_enabled", False))
+            )
+            self.server_tls_enabled_cb.blockSignals(False)
+
+        # -------------------------------------------------
+        # Resumen opciones del servidor
+        # -------------------------------------------------
+        if hasattr(self, "server_opts_summary"):
+            try:
+                self.server_opts_summary.setText(
+                    self.server_opts_summary_fn(cfg)
+                )
+            except Exception:
+                LOGGER.exception("Error al generar el resumen de opciones del servidor")
+
+        # -------------------------------------------------
+        # Resumen TLS
+        # -------------------------------------------------
+        if hasattr(self, "tls_opts_summary"):
+            try:
+                self.tls_opts_summary.setText(
+                    self.tls_opts_summary_fn(cfg)
+                )
+            except Exception:
+                LOGGER.exception("Error al generar el resumen TLS")
+
+        # -------------------------------------------------
+        # Resumen de throttling / backoff
+        # -------------------------------------------------
+        if hasattr(self, "th_summary"):
+            try:
+                self._th_params = {
+                    'window_sec': int(cfg.get('server_throttle_window_sec', 30) or 30),
+                    'base_ms': int(cfg.get('server_throttle_base_ms', 100) or 100),
+                    'max_ms': int(cfg.get('server_throttle_max_ms', 1000) or 1000),
+                    'threshold': int(cfg.get('server_throttle_threshold', 3) or 3),
+                }
+                self.th_summary.setText(
+                    throttle_summary(self._th_params)
+                )
+            except Exception:
+                LOGGER.exception("Error al generar el resumen de throttling")

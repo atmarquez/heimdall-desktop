@@ -1216,6 +1216,12 @@ def _mw_server_start(self):
         Cualquier excepción se maneja de forma defensiva para evitar
         dejar la aplicación en estado inconsistente.
     """
+    
+    # --- Definir SIEMPRE valores por defecto ---
+    bind_addr = None
+    port = None
+    use_tls = None
+
     try:
         # Valores por defecto defensivos
         self.cfg.setdefault('server_enabled', False)
@@ -1328,6 +1334,12 @@ def _mw_server_start(self):
     try:
         self._server_thread = ServerThread(self, host, s['port'], ssl_context)
         self._server_thread.start()
+        LOGGER.info(
+            "Servidor HTTP iniciado | addr=%s | port=%s | tls=%s",
+            bind_addr,
+            port,
+            use_tls,
+        )
     except Exception as e:
         try:
             QtWidgets.QMessageBox.warning(
@@ -1348,6 +1360,10 @@ def _mw_server_stop(self):
     - Espera con timeout.
     - Limpieza del estado de throttling.
     """
+   
+    if not getattr(self, "_http_server_thread", None):
+        return
+    
     t = getattr(self, '_server_thread', None)
     if t is not None:
         try:
@@ -1438,30 +1454,62 @@ def _mw_open_config(self):
                 self.server_stop()
         except Exception:
             LOGGER.exception('[auto] Exception capturada en _mw_open_config')
-
-
+ 
+ 
 def apply_mainwindow_http_patches(MainWindow):
     """
-    Aplica dinámicamente a MainWindow la lógica del servidor HTTP.
+    Aplica dinámicamente a MainWindow la lógica del servidor HTTP integrado.
 
-    Este enfoque evita acoplar directamente MainWindow con el servidor,
-    permitiendo mantener responsabilidades separadas.
+    - Inyecta métodos del servidor
+    - Define alias públicos esperados por el flujo interno
+    - Inicializa el estado del servidor
+    - Arranca el servidor al iniciar la aplicación
     """
 
-    # Métodos principales
-    MainWindow._execute_external = _mw_execute_external
-    MainWindow._notify_http_execution = _mw_notify_http_execution
-    MainWindow.server_settings = _mw_server_settings
+    # ------------------------------------------------------------------
+    # Inyección de métodos internos
+    # ------------------------------------------------------------------
+
+    MainWindow._mw_server_start = _mw_server_start
+    MainWindow._mw_server_stop = _mw_server_stop
+    MainWindow._mw_open_config = _mw_open_config
+    MainWindow._mw_execute_external = _mw_execute_external
+    MainWindow._mw_notify_http_execution = _mw_notify_http_execution
+    MainWindow._mw_server_settings = _mw_server_settings
+
+    # ------------------------------------------------------------------
+    # Alias públicos (esperados por _mw_server_start)
+    # ------------------------------------------------------------------
+
     MainWindow.server_start = _mw_server_start
     MainWindow.server_stop = _mw_server_stop
+    MainWindow.server_settings = _mw_server_settings
 
-    # Hook de __init__ solo para cleanup, NO para arrancar explícito
-    orig_init = MainWindow.__init__
+    # ------------------------------------------------------------------
+    # Parche del ciclo de vida (__init__)
+    # ------------------------------------------------------------------
 
-    def _init(self, *a, **k):
-        orig_init(self, *a, **k)
-        app = QtWidgets.QApplication.instance()
-        if app:
-            app.aboutToQuit.connect(lambda: self.server_stop())
+    _orig_init = MainWindow.__init__
 
-    MainWindow.__init__ = _init
+    def patched_init(self, *args, **kwargs):
+        # Inicialización normal de MainWindow
+        _orig_init(self, *args, **kwargs)
+
+        # --------------------------------------------------------------
+        # Estado inicial del servidor HTTP (CRÍTICO)
+        # --------------------------------------------------------------
+
+        self._http_server_thread = None
+
+        # --------------------------------------------------------------
+        # Arranque automático del servidor
+        # --------------------------------------------------------------
+
+        try:
+            self._mw_server_start()
+        except Exception:
+            LOGGER.exception(
+                "Error durante la inicialización del servidor HTTP integrado"
+            )
+
+    MainWindow.__init__ = patched_init

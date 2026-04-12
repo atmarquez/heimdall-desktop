@@ -57,7 +57,7 @@ class ImportExportConfigTab(QtWidgets.QWidget):
     #: Señal emitida cuando se importa un diccionario de configuración válido.
     config_imported = QtCore.Signal(dict)
 
-    def __init__(self, parent=None):
+    def __init__(self, cfg, parent=None):
         """
         Inicializa la pestaña de Importar / Exportar.
 
@@ -66,7 +66,8 @@ class ImportExportConfigTab(QtWidgets.QWidget):
                 Widget padre.
         """
         super().__init__(parent)
-
+        self.cfg = cfg
+        
         layout = QtWidgets.QVBoxLayout(self)
 
         info = QtWidgets.QLabel(
@@ -234,12 +235,12 @@ class ImportExportConfigTab(QtWidgets.QWidget):
             # Emisión de señal para que el diálogo gestione la aplicación real
             self.config_imported.emit(data)
 
-            QtWidgets.QMessageBox.information(
+            """QtWidgets.QMessageBox.information(
                 self,
                 "Importación completada",
                 "Configuración cargada correctamente.\n"
                 "Pulsa 'Aplicar' o 'Aceptar' para guardarla.",
-            )
+            )"""
 
         except Exception as e:
             QtWidgets.QMessageBox.warning(

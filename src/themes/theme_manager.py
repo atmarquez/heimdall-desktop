@@ -37,9 +37,15 @@ NOTE:
 from __future__ import annotations
 
 import os
+import sys
 from typing import Dict, Optional
 
 from PySide6 import QtGui, QtWidgets
+
+from config.service import get_cfg_service
+from logutils.setup import get_logger
+# Logger del módulo (configurado globalmente por la aplicación)
+LOGGER = get_logger()
 
 # ============================================================
 # Constantes públicas de tema
@@ -196,8 +202,93 @@ QProgressBar {{
 QProgressBar::chunk {{
     background-color: {progress_chunk};
 }}
+
+QTabWidget::pane {{
+    border: 1px solid {border};
+}}
+
+QTabBar::tab {{
+    background: {panel_bg};
+    color: {fg};
+    border: 1px solid {border};
+    padding: 6px 10px;
+}}
+
+QTabBar::tab:selected {{
+    background: {bg};
+}}
+
+QTabBar::tab:hover {{
+    background: {hover_bg};
+}}
+
+QHeaderView::section {{
+    background-color: {panel_bg};
+    color: {fg};
+    border-top: 0;
+    border-left: 0;
+    border-right: {border_w}px solid {border};
+    border-bottom: {border_w}px solid {border};
+    padding: 6px;
+}}
+
+QHeaderView::section:hover {{
+    background-color: {hover_bg};
+}}
+
+QTreeWidget::header,
+QTableView::header {{
+    background-color: {panel_bg};
+}}
 """.strip()
 
+def _load_qss_from_path(path: Optional[str]) -> str:
+    """
+    Carga un fichero QSS desde una ruta absoluta.
+    Devuelve una cadena vacía si hay cualquier problema.
+    """
+    try:
+        if not path:
+            return ""
+
+        if not os.path.isfile(path):
+            LOGGER.warning(f"QSS no encontrado: {path}")
+            return ""
+
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
+
+    except Exception as e:
+        LOGGER.exception(f"Error cargando QSS desde {path}")
+        return ""
+
+def _load_system_qss() -> str:
+    """
+    Carga el fichero styles.qss desde el directorio principal
+    de la aplicación y devuelve su contenido como texto.
+
+    Si el fichero no existe o hay algún problema, devuelve
+    una cadena vacía (no rompe la aplicación).
+    """
+    try:
+        # Directorio donde está main.py
+        if getattr(sys, 'frozen', False):
+            # Ejecutable empaquetado (PyInstaller, etc.)
+            base_dir = os.path.dirname(sys.executable)
+        else:
+            # Ejecución normal desde código fuente
+            base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+        qss_path = os.path.join(base_dir, "styles.qss")
+
+        if not os.path.isfile(qss_path):
+            return ""
+
+        with open(qss_path, "r", encoding="utf-8") as f:
+            return f.read()
+
+    except Exception:
+        return ""
 
 def _build_qss(palette: Dict[str, str | int]) -> str:
     """
@@ -259,6 +350,21 @@ def _hex_to_colorref(hex_color: Optional[str]) -> Optional[int]:
     except Exception:
         return None
 
+
+def _is_windows_11() -> bool:
+    """
+    Detecta si el sistema es Windows 11.
+
+    Returns:
+        bool: True si es Windows 11, False en otro caso.
+    """
+    if os.name != "nt":
+        return False
+    try:
+        return sys.getwindowsversion().build >= 22000
+    except Exception:
+        return False
+
 # ============================================================
 # ThemeManager (API pública)
 # ============================================================
@@ -289,6 +395,29 @@ class ThemeManager:
         """
         theme = cfg.get("theme", THEME_SYSTEM)
 
+        if theme == THEME_SYSTEM:
+            from config.service import get_cfg_service
+
+            cfg = get_cfg_service()
+            qss_path = cfg.get("system_qss_path")
+
+            qss = _load_qss_from_path(qss_path)
+
+            if qss:
+                QtWidgets.QApplication.instance().setStyleSheet(qss)
+                LOGGER.info(f"Tema QSS cargado desde fichero: {qss_path}")
+            else:
+                QtWidgets.QApplication.instance().setStyleSheet("")
+                LOGGER.info("Tema SYSTEM activo pero sin QSS válido")
+            return
+
+        # ❌ Bloquear host system en Windows 10
+        if theme == THEME_HOST_SYSTEM and os.name == "nt" and not _is_windows_11():
+            if _is_windows_dark_mode():
+                theme = THEME_DARK  # fallback seguro
+            else:
+                theme = THEME_LIGHT
+
         if theme == THEME_LIGHT:
             app.setStyleSheet(_build_qss(_PALETTE_LIGHT))
         elif theme == THEME_DARK:
@@ -296,33 +425,42 @@ class ThemeManager:
         elif theme == THEME_HIGH_CONTRAST:
             app.setStyleSheet(_build_qss(_PALETTE_HC))
         elif theme == THEME_HOST_SYSTEM:
-            # Tema heredado del sistema anfitrión
             app.setStyleSheet("")
             ThemeManager._apply_host_palette(app)
         else:
-            # Tema por defecto del sistema Qt
             app.setStyleSheet("")
 
     # --------------------------------------------------------
 
     @staticmethod
     def _apply_host_palette(app: QtWidgets.QApplication) -> None:
-        """
-        Aplica una paleta basada en el tema del sistema anfitrión (Windows).
+        if not _is_windows_dark_mode():
+            return
+        pal = QtGui.QPalette()
 
-        Args:
-            app (QApplication):
-                Instancia de la aplicación.
-        """
-        pal = QtGui.QPalette(app.style().standardPalette())
-        if _is_windows_dark_mode():
-            pal.setColor(QtGui.QPalette.Window, QtGui.QColor(32, 33, 36))
-            pal.setColor(QtGui.QPalette.WindowText, QtGui.QColor(232, 234, 237))
-            pal.setColor(QtGui.QPalette.Base, QtGui.QColor(48, 49, 52))
-            pal.setColor(QtGui.QPalette.Text, QtGui.QColor(232, 234, 237))
-            pal.setColor(QtGui.QPalette.Button, QtGui.QColor(48, 49, 52))
-            pal.setColor(QtGui.QPalette.ButtonText, QtGui.QColor(232, 234, 237))
-            pal.setColor(QtGui.QPalette.Highlight, QtGui.QColor(138, 180, 248))
+        # Fondos
+        pal.setColor(QtGui.QPalette.Window, QtGui.QColor(32, 33, 36))
+        pal.setColor(QtGui.QPalette.Base, QtGui.QColor(48, 49, 52))
+        pal.setColor(QtGui.QPalette.AlternateBase, QtGui.QColor(43, 45, 48))
+
+        # Textos
+        pal.setColor(QtGui.QPalette.WindowText, QtGui.QColor(232, 234, 237))
+        pal.setColor(QtGui.QPalette.Text, QtGui.QColor(232, 234, 237))
+        pal.setColor(QtGui.QPalette.ButtonText, QtGui.QColor(232, 234, 237))
+
+        # Botones
+        pal.setColor(QtGui.QPalette.Button, QtGui.QColor(48, 49, 52))
+
+        # Selección
+        pal.setColor(QtGui.QPalette.Highlight, QtGui.QColor(138, 180, 248))
+        pal.setColor(QtGui.QPalette.HighlightedText, QtGui.QColor(0, 0, 0))
+
+        # Relieve / bordes
+        pal.setColor(QtGui.QPalette.Dark, QtGui.QColor(24, 25, 28))
+        pal.setColor(QtGui.QPalette.Mid, QtGui.QColor(60, 63, 65))
+        pal.setColor(QtGui.QPalette.Light, QtGui.QColor(90, 90, 90))
+        pal.setColor(QtGui.QPalette.Shadow, QtGui.QColor(0, 0, 0))
+
         app.setPalette(pal)
 
     # --------------------------------------------------------

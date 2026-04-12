@@ -41,7 +41,7 @@ IMPORTANTE:
 # Diálogo de "Configuración"
 
 from PySide6 import QtCore, QtWidgets
-from PySide6.QtWidgets import QDialog
+from PySide6.QtWidgets import QDialog, QTabWidget, QDialogButtonBox, QVBoxLayout
 
 from ui.helpers import HelpableDialogMixin
 from ui.help import open_help_page
@@ -61,7 +61,6 @@ from ui.server.summaries import (
     server_opts_summary,
     tls_opts_summary,
 )
-
 
 class ConfigDialog(HelpableDialogMixin, QDialog):
     """
@@ -131,23 +130,16 @@ class ConfigDialog(HelpableDialogMixin, QDialog):
             open_help_page('index')
 
     def __init__(self, cfg, parent=None):
-        """
-        Inicializa el diálogo de configuración.
-
-        Args:
-            cfg: Diccionario de configuración actual de la aplicación.
-            parent: Widget padre (normalmente MainWindow).
-        """
         super().__init__(parent)
-
         self.cfg = cfg
 
-        # Layout principal (UNO SOLO)
-        main_layout = QtWidgets.QVBoxLayout(self)
+        self.setWindowTitle("Configuración")
+        self.resize(700, 500)
 
-        # Tabs (UNA SOLA VEZ)
-        self.tabs = QtWidgets.QTabWidget(self)
-        main_layout.addWidget(self.tabs)
+        # -----------------------------
+        # Pestañas
+        # -----------------------------
+        self.tabs = QTabWidget(self)
 
         # --------------------------------------------------
         # Pestañas de configuración
@@ -169,12 +161,20 @@ class ConfigDialog(HelpableDialogMixin, QDialog):
         self.tabs.addTab(self.scripts_tab, 'Scripts')
 
         # Pestaña Avanzado (Import / Export)
-        self.import_export_tab = ImportExportConfigTab(self)
+        self.import_export_tab = ImportExportConfigTab(cfg, self)
         self.import_export_tab.populate_from_cfg()
         self.import_export_tab.config_imported.connect(
             self._on_config_imported
         )
         self.tabs.addTab(self.import_export_tab, 'Avanzado')
+        self.import_export_tab.load_from_cfg(cfg)
+        try:
+            self.import_export_tab.config_imported.disconnect(self._on_config_imported)
+        except TypeError:
+            # No estaba conectada todavía
+            pass
+        self.import_export_tab.config_imported.connect(self._on_config_imported)
+
 
         self.server_tab = ServerConfigTab(
             self,
@@ -182,7 +182,7 @@ class ConfigDialog(HelpableDialogMixin, QDialog):
             server_opts_summary_fn=server_opts_summary,
             tls_opts_summary_fn=tls_opts_summary,
         )
-        self.tabs.addTab(self.server_tab.widget, 'Servidor')
+        self.tabs.addTab(self.server_tab, 'Servidor')
 
         self.log_tab = LogConfigTab(self.tabs, self.cfg)
         self.tabs.addTab(self.log_tab, 'Log')
@@ -190,29 +190,61 @@ class ConfigDialog(HelpableDialogMixin, QDialog):
         self.about_tab = AboutTab(self.tabs)
         self.tabs.addTab(self.about_tab, 'Acerca de…')
 
-        # --------------------------------------------------
-        # Botonera inferior
-        # --------------------------------------------------
-        self._button_box = QtWidgets.QDialogButtonBox(
-            QtWidgets.QDialogButtonBox.Ok
-            | QtWidgets.QDialogButtonBox.Cancel
+        # -----------------------------
+        # Botonera
+        # -----------------------------
+        self.button_box = QDialogButtonBox(
+            QDialogButtonBox.Ok | QDialogButtonBox.Apply | QDialogButtonBox.Cancel,
+            parent=self,
         )
-        main_layout.addWidget(self._button_box)
 
-        self._button_box.accepted.connect(self._on_apply_clicked)
-        self._button_box.accepted.connect(self.accept)
-        self._button_box.rejected.connect(self.reject)
-
-        apply_btn = self._button_box.addButton(
-            'Aplicar cambios',
-            QtWidgets.QDialogButtonBox.ApplyRole
-        )
-        apply_btn.clicked.connect(self._on_apply_clicked)
+        self.button_box.button(QDialogButtonBox.Apply).clicked.connect(self._apply_changes)
+        #self.button_box.accepted.connect(self._apply_changes)
+        self.button_box.accepted.connect(self._on_accept)
+        self.button_box.rejected.connect(self.reject)
 
         # Botón de ayuda contextual
-        self._install_help_button(self._button_box)
+        self._install_help_button(self.button_box)
+        
+        # -----------------------------
+        # Layout principal
+        # -----------------------------
+        layout = QVBoxLayout(self)
+        layout.addWidget(self.tabs)
+        layout.addWidget(self.button_box)
 
-        self.setWindowTitle('Configuración')
+    # --------------------------------------------------
+    # Lógica de botones
+    # --------------------------------------------------
+    def _apply_changes(self):
+        """
+        Aplica la configuración actual al estado del diálogo,
+        la guarda en disco y refresca todas las pestañas,
+        sin cerrar el diálogo.
+        """
+        # Si hay una configuración importada pendiente, aplicarla ahora
+        if hasattr(self, "_imported_cfg"):
+            self.cfg.clear()
+            self.cfg.update(self._imported_cfg)
+            del self._imported_cfg
+
+        # Guardar en disco
+        save_config(self.cfg)
+
+        # Refrescar todas las pestañas con la configuración aplicada
+        for i in range(self.tabs.count()):
+            tab = self.tabs.widget(i)
+            if hasattr(tab, "populate_from_cfg"):
+                tab.populate_from_cfg()
+                
+        # Emitir señal de que la configuración ha cambiado
+        # (MainWindow o AppController pueden reaccionar a esto)
+        self.config_changed = True
+
+    def _on_accept(self):
+        """Aplica los cambios y cierra el diálogo."""
+        self._apply_changes()
+        self.accept()
 
     def _on_config_imported(self, cfg: dict):
         """
@@ -231,55 +263,16 @@ class ConfigDialog(HelpableDialogMixin, QDialog):
                 "Error",
                 f"No se pudo aplicar la configuración importada:\n{e}",
             )
-
-    def _request_restart(self):
+            
+    def _on_config_imported(self, new_cfg: dict):
         """
-        **TEMPORAL**
-
-        Solicita el reinicio de la aplicación.
-
-        NOTE:
-            Este método se mantendrá hasta que el reinicio
-            sea gestionado exclusivamente desde MainWindow.
+        Recibe una configuración importada y la guarda
+        como candidata, sin aplicarla aún.
         """
-        try:
-            self.parent()._restart_app()
-        except Exception:
-            QtWidgets.QMessageBox.information(
-                self,
-                'Reinicio',
-                'Guarda los cambios y reinicia manualmente la aplicación.'
-            )
+        self._imported_cfg = new_cfg
 
-    def _on_apply_clicked(self):
-        """
-        Aplica los cambios actuales de todas las pestañas.
-
-        Este método:
-        - Recoge valores de cada pestaña.
-        - Actualiza el diccionario de configuración.
-        - Guarda la configuración persistente.
-        - Emite la señal `applied`.
-        """
-        try:
-            self.general_tab.apply_to_cfg(self.cfg)
-            self.appearance_tab.apply_to_cfg(self.cfg)
-            self.quick_buttons_tab.apply_to_cfg(self.cfg)
-            self.scripts_tab.apply_to_cfg(self.cfg)
-            self.import_export_tab.apply_to_cfg(self.cfg)
-
-            if hasattr(self, "server_tab"):
-                self.server_tab.apply_to_cfg(self.cfg)
-
-            if hasattr(self, "log_tab"):
-                self.log_tab.apply_to_cfg(self.cfg)
-
-            save_config(self.cfg)
-            self.applied.emit(self.cfg)
-
-        except Exception as e:
-            QtWidgets.QMessageBox.warning(
-                self,
-                "Aplicar cambios",
-                f"No se pudieron aplicar los cambios:\n{e}"
-            )
+        QtWidgets.QMessageBox.information(
+            self,
+            "Configuración importada",
+            "Configuración lista para aplicar.\nPulsa 'Aplicar' u 'Aceptar'."
+        )        
