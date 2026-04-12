@@ -1,10 +1,10 @@
 {
   "base_dir": "C:/Utilidades/heimdall-desktop/src/apps",
   "window": {
-    "height": 642,
-    "width": 524,
-    "x": 1395,
-    "y": 355
+    "height": 644,
+    "width": 527,
+    "x": 1008,
+    "y": 140
   },
   "start_minimized": true,
   "minimize_to_tray": true,
@@ -14,7 +14,7 @@
   "root_category_name": "Sin categoría",
   "app_title": "Heimdall Desktop by Naidel",
   "app_icon_path": "C:/Utilidades/heimdall-desktop/src/resources/iconos/Designer (Quake).png",
-  "theme": "light",
+  "theme": "dark",
   "web_search_url": "https://www.google.es",
   "log_enabled": true,
   "log_file_path": "C:/Utilidades/heimdall-desktop/src/launcher.log",
@@ -149,10 +149,10 @@
     ".vbs"
   ],
   "server_base_dir_only": false,
-  "server_enabled": true,
+  "server_enabled": false,
   "server_local_only": true,
   "server_notify_mode": "all",
-  "server_port": 3333,
+  "server_port": 1111,
   "server_restrict_to_roots": true,
   "server_throttle_base_ms": 100,
   "server_throttle_max_ms": 1000,

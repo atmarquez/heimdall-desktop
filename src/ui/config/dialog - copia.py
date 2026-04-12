@@ -223,21 +223,16 @@ class ConfigDialog(HelpableDialogMixin, QDialog):
         sin cerrar el diálogo.
         """
         # Si hay una configuración importada pendiente, aplicarla ahora
+        print("_imported_cfg")
         if hasattr(self, "_imported_cfg"):
             self.cfg.clear()
             self.cfg.update(self._imported_cfg)
             del self._imported_cfg
-        else:
-            # 👉 1. Leer datos de las pestañas
-            for i in range(self.tabs.count()):
-                tab = self.tabs.widget(i)
-                if hasattr(tab, "apply_to_cfg"):
-                    tab.apply_to_cfg(self.cfg)
 
-        # 👉 2. Guardar en disco
+        # Guardar en disco
         save_config(self.cfg)
 
-        # 👉 3. Refrescar UI desde cfg
+        # Refrescar todas las pestañas con la configuración aplicada
         for i in range(self.tabs.count()):
             tab = self.tabs.widget(i)
             if hasattr(tab, "populate_from_cfg"):
